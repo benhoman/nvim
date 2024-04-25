@@ -3,6 +3,7 @@ return {
 	dependencies = { "nvim-lua/plenary.nvim" },
 	config = function()
 		local tc = require("todo-comments")
+		tc.setup()
 
 		vim.keymap.set("n", "]t", function()
 			tc.jump_next()
