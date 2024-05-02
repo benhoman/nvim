@@ -40,12 +40,6 @@ return {
 				terminal_colors = true,
 			})
 			vim.cmd("colorscheme cyberdream") -- set the colorscheme
-			local cyberdream = require("lualine.themes.cyberdream")
-			require("lualine").setup({
-				options = {
-					theme = "cyberdream",
-				},
-			})
 		end,
 	},
 }
