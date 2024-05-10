@@ -17,13 +17,55 @@ return {
 		"CopilotC-Nvim/CopilotChat.nvim",
 		branch = "canary",
 		dependencies = {
-			{ "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
-			{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+			{ "zbirenbaum/copilot.lua" },
+			{ "nvim-lua/plenary.nvim" },
 		},
 		opts = {
-			debug = false, -- Enable debugging
-			-- See Configuration section for rest
+			debug = false,
+			show_help = false, -- Shows help message as virtual lines when waiting for user input
+			question_header = "**** ", -- Header to use for user questions
+			answer_header = "**** ", -- Header to use for AI answers
+			error_header = "**Error** ", -- Header to use for errors
+			separator = "-----------", -- Separator to use in chat
+			callback = nil,
 		},
-		-- See Commands section for default commands if you want to lazy load on them
+		keys = {
+			{
+				"<leader>cp",
+				function()
+					local actions = require("CopilotChat.actions")
+					require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
+				end,
+				desc = "CopilotChat - Prompt actions",
+			},
+			{
+				"<leader>ch",
+				function()
+					local actions = require("CopilotChat.actions")
+					require("CopilotChat.integrations.telescope").pick(actions.help_actions())
+				end,
+				desc = "CopilotChat - Diagnostic actions",
+			},
+			{
+				"<leader>co",
+				function()
+					require("CopilotChat").open()
+				end,
+				desc = "CopilotChat - Open",
+			},
+			{
+				"<leader>cm",
+				function()
+					vim.cmd("CopilotChatCommitStaged")
+				end,
+				desc = "CopilotChat - Commit",
+			},
+		},
+
+		cmd = {
+			"CopilotChatOpen",
+			"CopilotChatCommit",
+			"CopilotChatCommitStaged",
+		},
 	},
 }
