@@ -75,7 +75,7 @@ return {
 				end, { "i", "s" }),
 			}),
 			sources = {
-				{ name = "coplit" },
+				{ name = "copilot" },
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "path" },
