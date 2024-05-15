@@ -73,6 +73,7 @@ return {
 			rust_analyzer = {},
 			html = { filetypes = { "html", "twig", "hbs" } },
 			tsserver = {},
+			zls = {},
 
 			lua_ls = {
 				settings = {
