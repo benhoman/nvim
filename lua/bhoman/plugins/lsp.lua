@@ -92,6 +92,7 @@ return {
 			"stylua",
 			"jsonls",
 			"pyright",
+			"flake8",
 			"ruff",
 		})
 
