@@ -12,6 +12,15 @@ return {
 		end,
 	},
 	{
+		"shaunsingh/moonlight.nvim",
+		enabled = false,
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.cmd.colorscheme("moonlight")
+		end,
+	},
+	{
 		"rose-pine/neovim",
 		enabled = false,
 		name = "rose-pine",
