@@ -15,6 +15,7 @@ return {
 			end,
 		},
 	},
+	enabled = false,
 	config = function()
 		require("telescope").setup({
 			extensions = {

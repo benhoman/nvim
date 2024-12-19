@@ -19,7 +19,7 @@ return {
 
 		-- dependencies
 		"hrsh7th/cmp-nvim-lsp",
-		"nvim-telescope/telescope.nvim",
+		-- "nvim-telescope/telescope.nvim",
 	},
 
 	config = function()
@@ -32,18 +32,18 @@ return {
 					vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 				end
 
-				local builtin = require("telescope.builtin")
+				-- local builtin = require("telescope.builtin")
 
-				-- Important LSP Navigation keybinds
-				--
-				-- Jump to the definition of the word under your cursor.
-				--  To jump back, press <C-T>.
-				map("gd", builtin.lsp_definitions, "[G]oto [D]efinition")
-				map("gr", builtin.lsp_references, "[G]oto [R]eferences")
-				map("gI", builtin.lsp_implementations, "[G]oto [I]mplementation")
-				map("<leader>D", builtin.lsp_type_definitions, "Type [D]efinition")
-				map("<leader>ds", builtin.lsp_document_symbols, "[D]ocument [S]ymbols")
-				map("<leader>ws", builtin.lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
+				-- -- Important LSP Navigation keybinds
+				-- --
+				-- -- Jump to the definition of the word under your cursor.
+				-- --  To jump back, press <C-T>.
+				-- map("gd", builtin.lsp_definitions, "[G]oto [D]efinition")
+				-- map("gr", builtin.lsp_references, "[G]oto [R]eferences")
+				-- map("gI", builtin.lsp_implementations, "[G]oto [I]mplementation")
+				-- map("<leader>D", builtin.lsp_type_definitions, "Type [D]efinition")
+				-- map("<leader>ds", builtin.lsp_document_symbols, "[D]ocument [S]ymbols")
+				-- map("<leader>ws", builtin.lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
 
 				map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
