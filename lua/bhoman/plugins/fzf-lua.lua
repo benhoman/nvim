@@ -35,8 +35,9 @@ return {
 			-- find
 			{ "<leader>fb", "<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>", desc = "Buffers" },
 			{ "<leader>ff", "<cmd>FzfLua files<cr>", desc = "[F]ind [F]iles (cwd)" },
-			{ "<leader>fg", "<cmd>FzfLua git_files<cr>", desc = "Find Files (git-files)" },
-			{ "<leader>fr", "<cmd>FzfLua oldfiles<cr>", desc = "Recent" },
+			{ "<leader>fg", "<cmd>FzfLua git_files<cr>", desc = "[F]ind [G]it Files (git-files)" },
+			{ "<leader>fr", "<cmd>FzfLua oldfiles<cr>", desc = "[F]ind [R]ecent Files" },
+			{ "<leader>ft", "<cmd>FzfLua treesitter<cr>", desc = "[F]ind [T]reesitter" },
 			-- git
 			{ "<leader>gb", "<cmd>FzfLua git_branches<CR>", desc = "[G]it [B]ranches" },
 			{ "<leader>gc", "<cmd>FzfLua git_commits<CR>", desc = "[G]it [C]ommits" },
