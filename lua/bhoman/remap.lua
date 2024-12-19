@@ -22,8 +22,6 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
-vim.keymap.set("n", "<leader>F", vim.lsp.buf.format, { desc = "Format Buffer" })
-
 -- Let me out of the terminal
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
 
