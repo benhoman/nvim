@@ -2,6 +2,7 @@ return {
 	{
 		"zbirenbaum/copilot.lua",
 		cmd = "Copilot",
+		enabled = false,
 		-- Uncomment following to auto auth
 		-- build = ":Copilot auth",
 		opts = {
@@ -15,6 +16,7 @@ return {
 	},
 	{
 		"CopilotC-Nvim/CopilotChat.nvim",
+		enabled = false,
 		branch = "canary",
 		dependencies = {
 			{ "zbirenbaum/copilot.lua" },
