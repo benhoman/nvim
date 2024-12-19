@@ -9,7 +9,19 @@ return {
 		},
 		config = function()
 			-- calling `setup` is optional for customization
-			require("fzf-lua").setup({})
+			require("fzf-lua").setup({
+				winopts = {
+					fullscreen = true,
+					-- height = 0.9,
+					-- width = 0.95,
+				},
+				fzf_opts = {
+					-- ["--layout"] = "default",
+				},
+				-- files = {
+				-- 	rg_opts = "--color=never --files --hidden --follow --no-ignore -g '!.git'",
+				-- },
+			})
 		end,
 		keys = {
 			{ "<c-j>", "<c-j>", ft = "fzf", mode = "t", nowait = true },
@@ -53,7 +65,6 @@ return {
 				"gd",
 				"<cmd>FzfLua lsp_definitions     jump_to_single_result=true ignore_current_line=true<cr>",
 				desc = "Goto Definition",
-				-- has = "definition",
 			},
 			{
 				"gr",
