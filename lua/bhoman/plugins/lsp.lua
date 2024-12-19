@@ -72,7 +72,7 @@ return {
 			pyright = {},
 			rust_analyzer = {},
 			html = { filetypes = { "html", "twig", "hbs" } },
-			tsserver = {},
+			ts_ls = {},
 			zls = {},
 
 			lua_ls = {
