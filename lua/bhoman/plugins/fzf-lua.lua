@@ -9,7 +9,10 @@ return {
 		},
 		config = function()
 			-- calling `setup` is optional for customization
-			require("fzf-lua").setup({
+			local fzf_lua = require("fzf-lua")
+			local actions = fzf_lua.actions
+
+			fzf_lua.setup({
 				winopts = {
 					fullscreen = true,
 					-- height = 0.9,
@@ -18,10 +21,26 @@ return {
 				fzf_opts = {
 					-- ["--layout"] = "default",
 				},
+				keymap = {
+					fzf = {
+						-- use cltr-q to select all items and convert to quickfix list
+						["ctrl-q"] = "select-all+accept",
+					},
+				},
+				grep = {
+					actions = {
+						["ctrl-q"] = {
+							fn = actions.file_edit_or_qf,
+							prefix = "select-all+",
+						},
+					},
+				},
 				-- files = {
 				-- 	rg_opts = "--color=never --files --hidden --follow --no-ignore -g '!.git'",
 				-- },
 			})
+
+			fzf_lua.register_ui_select()
 		end,
 		keys = {
 			{ "<c-j>", "<c-j>", ft = "fzf", mode = "t", nowait = true },
@@ -38,6 +57,13 @@ return {
 			{ "<leader>fg", "<cmd>FzfLua git_files<cr>", desc = "[F]ind [G]it Files (git-files)" },
 			{ "<leader>fr", "<cmd>FzfLua oldfiles<cr>", desc = "[F]ind [R]ecent Files" },
 			{ "<leader>ft", "<cmd>FzfLua treesitter<cr>", desc = "[F]ind [T]reesitter" },
+			{
+				"<leader>fc",
+				function()
+					require("fzf-lua").files({ cwd = vim.fn.stdpath("config") })
+				end,
+				desc = "[F]ind [C]onfig File",
+			},
 			-- git
 			{ "<leader>gb", "<cmd>FzfLua git_branches<CR>", desc = "[G]it [B]ranches" },
 			{ "<leader>gc", "<cmd>FzfLua git_commits<CR>", desc = "[G]it [C]ommits" },
