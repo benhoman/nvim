@@ -1,6 +1,7 @@
 return {
 	"vim-test/vim-test", -- "klen/nvim-test",
 	config = function()
+		vim.keymap.set("n", "<leader>tc", ":TestClass<cr>")
 		vim.keymap.set("n", "<leader>tn", ":TestNearest<cr>")
 		vim.keymap.set("n", "<leader>tf", ":TestFile<cr>")
 		vim.keymap.set("n", "<leader>tl", ":TestLast<cr>")
@@ -9,8 +10,8 @@ return {
 
 		vim.g["test#strategy"] = "floaterm"
 		vim.g["test#python#runner"] = "djangotest"
-		vim.g["test#python#djangotest#executable"] = "ca test"
-		vim.g["test#python#pytest#executable"] = "ca test"
+		vim.g["test#python#djangotest#executable"] = "ca magictest"
+		vim.g["test#python#pytest#executable"] = "ca magictest"
 	end,
 	dependencies = {
 		{
